@@ -1,9 +1,8 @@
 import bcrypt from 'bcrypt'
-const saltRounds = 20
 
 export const generateHashPassword = async (plainPassword: string): Promise<boolean | unknown> => {
   try {
-    return await bcrypt.hash(plainPassword, saltRounds)
+    return await bcrypt.hash(plainPassword, 10)
   } catch (err) {
     return err
   }
